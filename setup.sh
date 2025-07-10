@@ -1,0 +1,1 @@
+# This file will be used to install things such as home-manager, my home-manager config, and Nix itself.
