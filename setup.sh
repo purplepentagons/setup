@@ -5,4 +5,4 @@ nix-channel --add https://github.com/nix-community/home-manager/archive/master.t
 nix-channel --update
 nix-shell '<home-manager>' -A install
 
-home-manager switch --flake ~/setup
+home-manager switch --flake ~/setup --extra-experimental-features "nix-command flakes"

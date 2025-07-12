@@ -1,0 +1,89 @@
+{
+    "height": 30,
+    "margin": "0px 0px 10px 0px",
+
+    "group/rbborder": {},
+    "group/lbborder": {},
+    "group/rtborder": {},
+    "group/ltborder": {},
+    "group/trbborder": {},
+    "group/tlbborder": {},
+    "group/trtborder": {},
+    "group/tltborder": {},
+    "group/arbborder": {},
+    "group/albborder": {},
+    "group/artborder": {},
+    "group/altborder": {},
+
+    "group/right": {
+        "orientation": "inherit",
+        "modules": [
+            "network",
+            "cpu",
+            "memory"
+        ]
+    },
+
+    "group/right2": {
+        "orientation": "inherit",
+        "modules": [
+            "clock"
+        ]
+    },
+
+    "group/center": {
+        "orientation": "inherit",
+        "modules": [
+            "pulseaudio/slider"
+        ]
+    },
+    
+    "group/left": {
+        "orientation": "inherit",
+        "modules": [
+            "hyprland/workspaces"
+        ]
+    },
+
+    "modules-right": [
+        "group/altborder",
+        "group/right2",
+        "group/tltborder",
+        "group/right"
+    ],
+
+    "modules-center": [
+        "group/ltborder",
+        "group/center",
+        "group/rtborder"
+    ],
+
+    "modules-left": [
+        "group/left",
+        "group/rtborder"
+    ],
+
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": "󰤮 ",
+        "tooltip-format": "{ifname} via {gwaddr}"
+    },
+
+    "clock": {
+        "format": "{:%B %d, %I:%M %p}"
+    },
+
+    "cpu": {
+        "format": "{usage}%  "
+    },
+
+    "memory": {
+        "format": "{}%  "
+    },
+
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100
+    }
+}

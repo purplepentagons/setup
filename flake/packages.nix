@@ -6,4 +6,7 @@
   mako
   hyprpaper
   waybar
+
+  work-sans
+  nerd-fonts.symbols-only
 ]
