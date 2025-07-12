@@ -7,13 +7,7 @@
 
   home.packages = import ./packages.nix { inherit pkgs; };
 
-  nixpkgs = {
-    config = {
-      inherit system;
-      allowUnfree = true;
-      experimental-features = "nix-command flakes";
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
   home.file = import ./dotfiles.nix;
 
