@@ -1,11 +1,15 @@
 { pkgs, stateVersion, system, username }: {
+
+  imports = [
+    ./aliases.nix
+    ./packages.nix
+  ];
+
   home = {
     inherit stateVersion username;
 
     homeDirectory = "/home/${username}";
   };
-
-  home.packages = import ./packages.nix { inherit pkgs; };
 
   nixpkgs.config.allowUnfree = true;
 
