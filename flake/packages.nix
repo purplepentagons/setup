@@ -11,13 +11,13 @@
     signal-desktop
     mpv
     virt-manager
-    firefox
     vscodium
     zathura
 
     # cli programs
     less
     btop
+    eza
 
     # wm related
     hyprshot
@@ -25,10 +25,6 @@
     mako
     hyprpaper
     waybar
-
-    # fonts
-    work-sans
-    nerd-fonts.symbols-only
 
     # stuff i haven't figured out how to categorize
     usbutils

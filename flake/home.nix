@@ -3,8 +3,10 @@
   imports = [
     ./aliases.nix
     ./packages.nix
-    ./programs.nix
-    ./dotfiles.nix
+    ./fonts.nix
+    
+    ./dotfiles
+    ./programs
   ];
 
   home = {
