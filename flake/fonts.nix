@@ -7,7 +7,7 @@
 
   fonts.fontconfig.enable = true;
   fonts.fontconfig.defaultFonts = {
-    monospace = [ "Inconsolata Nerd Font Mono" ];
+    monospace = [ "Inconsolata Nerd Font Propo" ];
     sansSerif = [ "Work Sans" ];
   };
 }
