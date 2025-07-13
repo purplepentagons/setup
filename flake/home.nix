@@ -3,6 +3,8 @@
   imports = [
     ./aliases.nix
     ./packages.nix
+    ./programs.nix
+    ./dotfiles.nix
   ];
 
   home = {
@@ -22,8 +24,6 @@
       experimental-features = nix-command flakes
     '';
   };
-  
-  home.file = import ./dotfiles.nix;
 
   programs.home-manager.enable = true;
 }
