@@ -28,7 +28,10 @@
 				"browser.theme.content-theme" = 0;
 				"browser.download.useDownloadDir" = false;
 				"browser.uiCustomization.state" = builtins.readFile ./uiCustomization.json; # i am not putting that into 
+				"browser.newtabpage.activity-stream.showWeather" = false;
+				"browser.newtabpage.activity-stream.feeds.section.topstories" = false;
 				"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+				"extensions.pocket.enabled" = false;
 			};
 
 			InstallAddonsPermission.Default = true;
