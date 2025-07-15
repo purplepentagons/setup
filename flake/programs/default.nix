@@ -1,7 +1,7 @@
 {
-  imports = [
-    ./firefox.nix
-  ];
+	imports = [
+		./firefox
+	];
 
-  programs.bash.enable = true;
+	programs.bash.enable = true;
 }

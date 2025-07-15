@@ -1,31 +1,31 @@
 { pkgs, stateVersion, system, username }: {
 
-  imports = [
-    ./aliases.nix
-    ./packages.nix
-    ./fonts.nix
-    
-    ./dotfiles
-    ./programs
-  ];
+	imports = [
+		./aliases.nix
+		./packages.nix
+		./fonts.nix
+		
+		./dotfiles
+		./programs
+	];
 
-  home = {
-    inherit stateVersion username;
+	home = {
+		inherit stateVersion username;
 
-    homeDirectory = "/home/${username}";
-  };
+		homeDirectory = "/home/${username}";
+	};
 
-  nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfree = true;
 
-  nix = {
-    package = pkgs.nix;
-  
-    # for some reason, nix.options.experimental-features doesn't work
-    # i'm forced to do this as a workaround
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
+	nix = {
+		package = pkgs.nix;
+	
+		# for some reason, nix.options.experimental-features doesn't work
+		# i'm forced to do this as a workaround
+		extraOptions = ''
+			experimental-features = nix-command flakes
+		'';
+	};
 
-  programs.home-manager.enable = true;
+	programs.home-manager.enable = true;
 }

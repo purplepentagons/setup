@@ -1,0 +1,35 @@
+*, *::after, *::before {
+    border-radius: 0px !important;
+    font-family: sans-serif;
+}
+
+.urlbar-input-box { 
+    text-align: center;
+}
+
+/* cleaner navbar */
+#vertical-spacer {
+    display: none;
+}
+
+/* cleaner url bar */
+#page-action-buttons, #tracking-protection-icon-container {
+    display: none;
+}
+
+tab[selected="true"] {
+    font-weight: bold;
+    border: 5px solid gray;
+}
+
+toolbar * {
+    border: none !important;
+}
+
+.titlebar-button.titlebar-close {
+    display: none;
+}
+
+.tab-icon-image {
+    display: none;
+}
