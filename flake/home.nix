@@ -1,12 +1,7 @@
 { pkgs, stateVersion, system, username }: {
 
 	imports = [
-		./aliases.nix
-		./packages.nix
-		./fonts.nix
-		
-		./dotfiles
-		./programs
+		./modules
 	];
 
 	home = {
