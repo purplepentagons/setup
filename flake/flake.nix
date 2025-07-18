@@ -15,9 +15,10 @@
 			system = "x86_64-linux";
 			stateVersion = "25.05";
 			pkgs = nixpkgs.legacyPackages.${system};
+			helpers = import ./helpers.nix;
 
 			home = (import ./home.nix {
-				inherit pkgs stateVersion system username;
+				inherit pkgs stateVersion system username helpers;
 			});
 		in {
 			homeConfigurations.purplepentagons = home-manager.lib.homeManagerConfiguration {
