@@ -4,7 +4,7 @@
 		".config/foot/".source = ./foot;
 		".config/waybar/".source = ./waybar;
 
-		# odd to have wallpapers in config, but whatever works
-		".config/wallpapers".source = ../wallpapers;
+		# odd to have wallpapers in dotfiles, but whatever works
+		".config/wallpapers".source = ./wallpapers;
 	};
 }
