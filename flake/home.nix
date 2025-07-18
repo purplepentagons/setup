@@ -1,4 +1,4 @@
-{ pkgs, stateVersion, system, username, helpers, ... }: {
+{ pkgs, stateVersion, system, username, ... }: {
 
 	imports = [
 		./modules
