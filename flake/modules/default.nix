@@ -7,5 +7,6 @@
 		
 		./dotfiles
 		./programs
+		./shell
 	];
 }

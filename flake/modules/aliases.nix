@@ -1,7 +1,7 @@
 {
 	home.shellAliases = {
 		# switch to home-manager flake
-		nxs = "home-manager switch --flake ~/setup/flake";
+		# nxs = "home-manager switch --flake ~/setup/flake";
 		
 		# check home-manager flake
 		nfc = "nix flake check ~/setup/flake";
