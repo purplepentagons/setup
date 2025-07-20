@@ -1,8 +1,3 @@
-@define-color color1 #D74BF0;
-@define-color color2 #CF77DF;
-@define-color color3 #BF78C9;
-
-
 * {
 	font-family: sans-serif, "Symbols Nerd Font";
 	font-size: 15px;
@@ -125,15 +120,15 @@
 
 #network {
 	font-size: 15px;
-	color: @color3;
+	color: #[base3];
 }
 
 #cpu {
-	color: @color2;
+	color: #[base2];
 }
 
 #memory {
-	color: @color1;
+	color: #[base1];
 }
 
 #pulseaudio-slider {
@@ -153,7 +148,7 @@
 #pulseaudio-slider trough {
 	min-width: 200px;
 	min-height: 2px;
-	background-color: #582d58;
+	background-color: #582d58; /* this shouldn't be hardcoded, fix later */
 	border: none;
 	border-radius: 0px;
 }
@@ -161,7 +156,7 @@
 #pulseaudio-slider highlight {
 	min-width: 0px;
 	min-height: 0px;
-	background-color: @color1;
+	background-color: #[base1];
 	border: none;
 	border-radius: 0px;
 	margin: 0px;
