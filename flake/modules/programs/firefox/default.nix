@@ -27,7 +27,8 @@
 				"browser.aboutConfig.showWarning" = false;
 				"browser.theme.content-theme" = 0;
 				"browser.download.useDownloadDir" = false;
-				"browser.uiCustomization.state" = builtins.readFile ./uiCustomization.json; # i am not putting that into 
+				# browser.uiCustomization.state makes sure the top bar is organized the way I like it
+				"browser.uiCustomization.state" = builtins.readFile ./uiCustomization.json;
 				"browser.newtabpage.activity-stream.showWeather" = false;
 				"browser.newtabpage.activity-stream.feeds.section.topstories" = false;
 				"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
