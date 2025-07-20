@@ -23,4 +23,9 @@
 	};
 
 	programs.home-manager.enable = true;
+
+	modules.color.colors = {
+		darkbg = [ 0 0 0 127 ];
+		lightbg = [ 0 0 0 76 ];
+	};
 }

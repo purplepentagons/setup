@@ -1,7 +1,3 @@
-@define-color modulebg rgba(0,0,0,0.5);
-@define-color modulebg2 rgba(0,0,0,0.3);
-
-/* ayu mirage */
 @define-color color1 #D74BF0;
 @define-color color2 #CF77DF;
 @define-color color3 #BF78C9;
@@ -35,7 +31,7 @@
 }
 
 #workspaces button.active {
-	background-color: @modulebg2;
+	background-color: rgb[lightbg];
 }
 
 #lbborder, #rbborder, #ltborder, #rtborder, #tlbborder, #trbborder, #tltborder, #trtborder {
@@ -45,70 +41,70 @@
 
 #lbborder {
 	border-left: 20px solid transparent;
-	border-bottom: 30px solid @modulebg;
+	border-bottom: 30px solid rgb[darkbg];
 }
 
 #rbborder {
 	border-right: 20px solid transparent;
-	border-bottom: 30px solid @modulebg;
+	border-bottom: 30px solid rgb[darkbg];
 }
 
 #ltborder {
 	border-left: 20px solid transparent;
-	border-top: 30px solid @modulebg;
+	border-top: 30px solid rgb[darkbg];
 }
 
 #rtborder {
 	border-right: 20px solid transparent;
-	border-top: 30px solid @modulebg;
+	border-top: 30px solid rgb[darkbg];
 }
 
 #tlbborder {
-	border-left: 20px solid @modulebg2;
-	border-bottom: 30px solid @modulebg;
+	border-left: 20px solid rgb[lightbg];
+	border-bottom: 30px solid rgb[darkbg];
 }
 
 #trbborder {
-	border-right: 20px solid @modulebg2;
-	border-bottom: 30px solid @modulebg;
+	border-right: 20px solid rgb[lightbg];
+	border-bottom: 30px solid rgb[darkbg];
 }
 
 #tltborder {
-	border-left: 20px solid @modulebg2;
-	border-top: 30px solid @modulebg;
+	border-left: 20px solid rgb[lightbg];
+	border-top: 30px solid rgb[darkbg];
 }
 
 #trtborder {
-	border-right: 20px solid @modulebg2;
-	border-top: 30px solid @modulebg;
+	border-right: 20px solid rgb[lightbg];
+	border-top: 30px solid rgb[darkbg];
 }
 
 #albborder {
 	border-left: 20px solid transparent;
-	border-bottom: 30px solid @modulebg2;
+	border-bottom: 30px solid rgb[lightbg];
 }
 
 #arbborder {
 	border-right: 20px solid transparent;
-	border-bottom: 30px solid @modulebg2;
+	border-bottom: 30px solid rgb[lightbg];
 }
 
 #altborder {
 	border-left: 20px solid transparent;
-	border-top: 30px solid @modulebg2;
+	border-top: 30px solid rgb[lightbg];
 }
 
 #artborder {
 	border-right: 20px solid transparent;
-	border-top: 30px solid @modulebg2;
+	border-top: 30px solid rgb[lightbg];
 }
 
 #left, #center, #right {
-	background-color: @modulebg;
+	background-color: rgb[darkbg];
 }
 
 #right2 {
-	background-color: @modulebg2;
+	background-color: rgb[lightbg];
 }
 
 #right, #right2 {
