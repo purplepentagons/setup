@@ -10,7 +10,9 @@
 		# nix-shell -p <package>
 		nsp = "nix-shell -p";
 		# switch home-manager config without reloading desktop
-		hmsnr = "home-manager switch --flake ~/setup/flake";
+		hms = "home-manager switch --flake ~/setup/flake";
+		# i have nxs as muscle memory for my switch command
+		nxs = "hms";
 
 		# git commit -m <message>
 		gcm = "git commit -m";
