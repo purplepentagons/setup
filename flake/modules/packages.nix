@@ -18,6 +18,7 @@
 		less
 		btop
 		eza
+		starship
 
 		# wm related
 		hyprshot

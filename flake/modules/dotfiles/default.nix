@@ -6,7 +6,7 @@
 	inherit (lib.strings) concatMapStringsSep concatMapStrings;
 
 	listToHex = color: if (length color) == 3 || (length color) == 4 then 
-		"#" + (concatMapStrings (value: toHexString value) color)
+		"#" + (concatMapStrings (value: ((if value <= 15 then "0" else "") + toHexString value)) color)
 	else throw "Attempted to pass a color to listToHex, but did not receive a list with a length of 3 or 4.";
 
 	listToRGB = color: if (length color) == 3 then 
@@ -25,11 +25,15 @@
 
 in {  
 	home.file = {
+		# TODO: automate this so I don't have to specify config files in two places
+
 		".config/hypr/".source = ./hypr;
 		".config/foot/".source = ./foot;
 
 		".config/waybar/style.css".text = (applyConfigColors ./waybar/style.css);
 		".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+
+		".config/starship.toml".source = ./starship/starship.toml;
 
 		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers".source = ./wallpapers;

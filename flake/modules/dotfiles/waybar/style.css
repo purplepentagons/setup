@@ -120,15 +120,15 @@
 
 #network {
 	font-size: 15px;
-	color: #[base3];
+	color: #[base9];
 }
 
 #cpu {
-	color: #[base2];
+	color: #[base10];
 }
 
 #memory {
-	color: #[base1];
+	color: #[base12];
 }
 
 #pulseaudio-slider {
@@ -148,7 +148,7 @@
 #pulseaudio-slider trough {
 	min-width: 200px;
 	min-height: 2px;
-	background-color: #582d58; /* this shouldn't be hardcoded, fix later */
+	background-color: #[base8];
 	border: none;
 	border-radius: 0px;
 }
@@ -156,7 +156,7 @@
 #pulseaudio-slider highlight {
 	min-width: 0px;
 	min-height: 0px;
-	background-color: #[base1];
+	background-color: #[base9];
 	border: none;
 	border-radius: 0px;
 	margin: 0px;
