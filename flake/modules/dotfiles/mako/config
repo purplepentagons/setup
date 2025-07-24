@@ -1,0 +1,9 @@
+font=monospace 10
+border-color=#hex[background]22
+background-color=#hex[background2]
+border-size=3
+
+width=400
+height=120
+
+icon-location=right

@@ -26,7 +26,7 @@
 }
 
 #workspaces button.active {
-	background-color: rgb[lightbg];
+	background-color: rgb[background2];
 }
 
 #lbborder, #rbborder, #ltborder, #rtborder, #tlbborder, #trbborder, #tltborder, #trtborder {
@@ -36,70 +36,70 @@
 
 #lbborder {
 	border-left: 20px solid transparent;
-	border-bottom: 30px solid rgb[darkbg];
+	border-bottom: 30px solid rgb[background];
 }
 
 #rbborder {
 	border-right: 20px solid transparent;
-	border-bottom: 30px solid rgb[darkbg];
+	border-bottom: 30px solid rgb[background];
 }
 
 #ltborder {
 	border-left: 20px solid transparent;
-	border-top: 30px solid rgb[darkbg];
+	border-top: 30px solid rgb[background];
 }
 
 #rtborder {
 	border-right: 20px solid transparent;
-	border-top: 30px solid rgb[darkbg];
+	border-top: 30px solid rgb[background];
 }
 
 #tlbborder {
-	border-left: 20px solid rgb[lightbg];
-	border-bottom: 30px solid rgb[darkbg];
+	border-left: 20px solid rgb[background2];
+	border-bottom: 30px solid rgb[background];
 }
 
 #trbborder {
-	border-right: 20px solid rgb[lightbg];
-	border-bottom: 30px solid rgb[darkbg];
+	border-right: 20px solid rgb[background2];
+	border-bottom: 30px solid rgb[background];
 }
 
 #tltborder {
-	border-left: 20px solid rgb[lightbg];
-	border-top: 30px solid rgb[darkbg];
+	border-left: 20px solid rgb[background2];
+	border-top: 30px solid rgb[background];
 }
 
 #trtborder {
-	border-right: 20px solid rgb[lightbg];
-	border-top: 30px solid rgb[darkbg];
+	border-right: 20px solid rgb[background2];
+	border-top: 30px solid rgb[background];
 }
 
 #albborder {
 	border-left: 20px solid transparent;
-	border-bottom: 30px solid rgb[lightbg];
+	border-bottom: 30px solid rgb[background2];
 }
 
 #arbborder {
 	border-right: 20px solid transparent;
-	border-bottom: 30px solid rgb[lightbg];
+	border-bottom: 30px solid rgb[background2];
 }
 
 #altborder {
 	border-left: 20px solid transparent;
-	border-top: 30px solid rgb[lightbg];
+	border-top: 30px solid rgb[background2];
 }
 
 #artborder {
 	border-right: 20px solid transparent;
-	border-top: 30px solid rgb[lightbg];
+	border-top: 30px solid rgb[background2];
 }
 
 #left, #center, #right {
-	background-color: rgb[darkbg];
+	background-color: rgb[background];
 }
 
 #right2 {
-	background-color: rgb[lightbg];
+	background-color: rgb[background2];
 }
 
 #right, #right2 {

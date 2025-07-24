@@ -1,3 +1,6 @@
 # Wallpaper credit
 
-All of them are created by me. They're not very good as a result
+## Created by purplepentagons on GitHub (me)
+- colordial.png
+- isolines.png
+- purpleflames.png
