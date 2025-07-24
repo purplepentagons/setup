@@ -39,7 +39,7 @@ in {
 		".config/mako/config".text = (applyConfigColors ./mako/config);
 
 		# standalone files
-		".config/starship.toml".source = ./starship/starship.toml;
+		".config/starship.toml".source = ./no_folder/starship.toml;
 
 		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers".source = ./wallpapers;

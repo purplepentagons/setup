@@ -1,9 +1,15 @@
 font=monospace 10
-border-color=#hex[background]22
+border-color=#hex[bright_black]
 background-color=#hex[background2]
-border-size=3
+border-size=2
 
-width=400
+width=325
 height=120
 
 icon-location=right
+
+[urgency=normal]
+border-color=#hex[bright_black]
+
+[urgency=high]
+border-color=#hex[bright_red]
