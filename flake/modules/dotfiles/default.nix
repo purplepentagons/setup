@@ -23,26 +23,25 @@
 
 	applyConfigColors = configFile: applyColors (config.modules.color.colors) (readFile configFile);
 
-	# this doesn't have support for nested folders, i'll add it when it's necessary
-	placeConfigFolders = folders: listToAttrs ( flatten ( map ( folder:
-		map (file: 
-			{
-				name = (".config/${folder}/" + file);
-				value = {
-					text = (applyConfigColors ./${folder}/${file});
-				};
-			}
-		) (attrNames (readDir ./${folder}))
-	) folders ) );
-
 in {  
 	home.file = {
+		# TODO: automate this so I don't have to specify config files in two places
+		
+		# folders
+		".config/hypr/".source = ./hypr;
+
+		# files which require color substitution
+		".config/foot/foot.ini".text = (applyConfigColors ./foot/foot.ini);
+
+		".config/waybar/style.css".text = (applyConfigColors ./waybar/style.css);
+		".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
+
+		".config/mako/config".text = (applyConfigColors ./mako/config);
+
+		# standalone files
 		".config/starship.toml".source = ./no_folder/starship.toml;
+
+		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers".source = ./wallpapers;
-	} // placeConfigFolders [
-		"foot"
-		"hypr"
-		"mako"
-		"waybar"
-	];
+	};
 }
