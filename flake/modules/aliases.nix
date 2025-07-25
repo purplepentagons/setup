@@ -17,7 +17,7 @@
 		# git commit -m <message>
 		gcm = "git commit -m";
 		# git push
-		gps = "git push";
+		gph = "git push";
 		# git clone <repo link>
 		gcl = "git clone";
 		# find file in git repo
