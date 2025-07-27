@@ -22,7 +22,7 @@
 	) configFile;
 
 	applyConfigColors = configFile: applyColors (config.modules.color.colors) (readFile configFile);
-
+	
 in {  
 	home.file = {
 		# TODO: automate this so I don't have to specify config files in two places
