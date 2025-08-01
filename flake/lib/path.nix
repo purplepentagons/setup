@@ -1,12 +1,12 @@
 { lib, pkgs, ... }: let 
-	inherit (builtins) typeOf toString;
+	inherit (builtins) typeOf toString elemAt;
 in {
 	config.functions.path = {
 		getExtension = file: let regex = ".*(\\.[0-9a-z]+$)"; in 
 		if typeOf file == "path" then
-			builtins.match regex (toString file)
+			elemAt (builtins.match regex (toString file)) 0
 		else if typeOf file == "string" then 
-			builtins.match regex file
+			elemAt (builtins.match regex file) 0
 		else throw "expected either a set or a path";
 	};
 }
