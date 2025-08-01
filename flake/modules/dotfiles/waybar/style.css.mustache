@@ -1,0 +1,165 @@
+* {
+	font-family: sans-serif, "Symbols Nerd Font";
+	font-size: 15px;
+}
+
+#waybar {
+	background-color: transparent;
+	color: white;
+}
+
+#window label {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+#workspaces label {
+	font-size: 16px;
+}
+
+#workspaces button {
+	color: white;
+	border-radius: 0px;
+	border-color: transparent;
+	transition: background-color 0.125s;
+	padding: 0px 6.5px;
+}
+
+#workspaces button.active {
+	background-color: {{background2_hex}};
+}
+
+#lbborder, #rbborder, #ltborder, #rtborder, #tlbborder, #trbborder, #tltborder, #trtborder {
+	background: transparent;
+	min-height: 0px;
+}
+
+#lbborder {
+	border-left: 20px solid transparent;
+	border-bottom: 30px solid {{background-rgb}};
+}
+
+#rbborder {
+	border-right: 20px solid transparent;
+	border-bottom: 30px solid {{background-rgb}};
+}
+
+#ltborder {
+	border-left: 20px solid transparent;
+	border-top: 30px solid {{background-rgb}};
+}
+
+#rtborder {
+	border-right: 20px solid transparent;
+	border-top: 30px solid {{background-rgb}};
+}
+
+#tlbborder {
+	border-left: 20px solid {{background2-rgb}};
+	border-bottom: 30px solid {{background-rgb}};
+}
+
+#trbborder {
+	border-right: 20px solid {{background2-rgb}};
+	border-bottom: 30px solid {{background-rgb}};
+}
+
+#tltborder {
+	border-left: 20px solid {{background2-rgb}};
+	border-top: 30px solid {{background-rgb}};
+}
+
+#trtborder {
+	border-right: 20px solid {{background2-rgb}};
+	border-top: 30px solid {{background-rgb}};
+}
+
+#albborder {
+	border-left: 20px solid transparent;
+	border-bottom: 30px solid {{background2-rgb}};
+}
+
+#arbborder {
+	border-right: 20px solid transparent;
+	border-bottom: 30px solid {{background2-rgb}};
+}
+
+#altborder {
+	border-left: 20px solid transparent;
+	border-top: 30px solid {{background2-rgb}};
+}
+
+#artborder {
+	border-right: 20px solid transparent;
+	border-top: 30px solid {{background2-rgb}};
+}
+
+#left, #center, #right {
+	background-color: {{background-rgb}};
+}
+
+#right2 {
+	background-color: {{background2-rgb}};
+}
+
+#right, #right2 {
+	padding: 0px 5px;
+}
+
+#center {
+	padding: 0px 20px;
+}
+
+#right .module {
+	padding: 0px 5px;
+}
+
+#left {
+	font-size: 24px;
+}
+
+#network {
+	font-size: 15px;
+	color: #{{bright_red_hex}};
+}
+
+#cpu {
+	color: #{{bright_green_hex}};
+}
+
+#memory {
+	color: #{{bright_blue_hex}};
+}
+
+#pulseaudio-slider {
+	min-height: 0px;
+}
+
+#pulseaudio-slider slider {
+	min-height: 0px;
+	min-width: 15px;
+	border: none;
+	border-left: solid 14px transparent;
+	border-top: solid 21px white;
+	border-right: solid 14px transparent;
+	border-radius: 0px;
+}
+
+#pulseaudio-slider trough {
+	min-width: 200px;
+	min-height: 2px;
+	background-color: #{{bright_black_hex}};
+	border: none;
+	border-radius: 0px;
+}
+
+#pulseaudio-slider highlight {
+	min-width: 0px;
+	min-height: 0px;
+	background-color: #{{bright_red_hex}};
+	border: none;
+	border-radius: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+

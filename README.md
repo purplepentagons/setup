@@ -2,7 +2,9 @@
 
 Configuration files for my setup. I use Arch Linux and home-manager.
 
-# Prerequisites
+I'm not as well-acquainted with Nix as some other people are, so reading my code may be difficult.
+
+## Prerequisites
 - Arch Linux (for now)
 - Hyprland
 - Git

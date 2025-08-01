@@ -9,23 +9,35 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager }: 
+	outputs = { self, nixpkgs, home-manager}: 
 		let 
 			username = "purplepentagons";
 			system = "x86_64-linux";
 			stateVersion = "25.05";
-			pkgs = nixpkgs.legacyPackages.${system};
+			
+			alib = (pkgs.lib.evalModules {
+				modules = [ ./lib ];
+					specialArgs = {
+						inherit pkgs;
+						lib = pkgs.lib;
+					};
+			}).config.functions;
 
-			home = (import ./home.nix {
-				inherit pkgs stateVersion system username;
-			});
+			pkgs = import nixpkgs {
+				inherit system;
+			};
+
 		in {
 			homeConfigurations.purplepentagons = home-manager.lib.homeManagerConfiguration {
 				inherit pkgs;
 
 				modules = [
-					home
+					./home.nix
 				];
+
+				extraSpecialArgs = { 
+					inherit username stateVersion system pkgs alib;
+				};
 			}; 
 		}; 
- }
+}
