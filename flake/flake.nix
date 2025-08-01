@@ -16,7 +16,7 @@
 			stateVersion = "25.05";
 			
 			alib = (pkgs.lib.evalModules {
-				modules = [ ./lib ];
+				modules = [ ./alib ];
 					specialArgs = {
 						inherit pkgs;
 						lib = pkgs.lib;
