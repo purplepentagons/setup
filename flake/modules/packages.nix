@@ -22,7 +22,8 @@
 
 		# wm related
 		hyprshot
-		rofi-wayland
+		# rofi-wayland
+		fuzzel
 		mako
 		hyprpaper
 		waybar

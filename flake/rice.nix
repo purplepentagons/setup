@@ -4,7 +4,7 @@
 		lightbg = [ 0 0 0 76 ];
 
 		background = [ 10 10 15 ];
-		background2 = [ 24 24 34 ];
+		background2 = [ 34 34 44 ];
 		foreground = [ 255 255 255 ];
 
 		black = [ 32 34 39 ];
@@ -24,6 +24,7 @@
 		bright_cyan = [ 99 255 216 ];
 		bright_white = [ 240 241 243 ];
 
+		# automatically generate this somewhere else instead of defining them here
 		base00 = black;
 		base01 = red;
 		base02 = green;
@@ -40,5 +41,7 @@
 		base0D = bright_magenta;
 		base0E = bright_cyan;
 		base0F = bright_white;
+		base10 = background;
+		base11 = background2;
 	};
 }

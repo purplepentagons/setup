@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: let 
 	inherit (builtins) length toString elemAt map toJSON attrValues filter;
-	inherit (lib) toHexString concatMapAttrs;
+	inherit (lib) toHexString concatMapAttrs optionalString;
 	inherit (lib.strings) concatMapStrings concatMapStringsSep;
 	inherit (lib.lists) take;
 in {
@@ -20,7 +20,14 @@ in {
 			"${name}_rgb" = listToRGB color;
 		}) colorList);
 
-		recolorImage = colors: image: name: pkgs.stdenvNoCC.mkDerivation {
+		# the default name is wallpaper because you're usually using this for a wallpaper
+		recolorImage = {
+			colors, 
+			image, 
+			name ? "wallpaper", 
+			luminosity ? 0.1, 
+			preserveColors ? true
+		}: pkgs.stdenvNoCC.mkDerivation {
 			name = "${name}";
 
 			nativeBuildinputs = with pkgs; [ lutgen ];
@@ -39,10 +46,10 @@ in {
 				export LUTGEN_DIR=$HOME/theme
 				cp $colorsPath ./theme/distortedprose
 
-				# for some reason, the path to the image is to another path, so I have to open it like a matryoshka doll
+				# for some reason, the image file contains the path to the actual image, so I have to open it like a matryoshka doll
 				cat $(cat $imagePath) > image
 
-				${pkgs.lutgen}/bin/lutgen apply ./image -p distortedprose -PL0.1 -o ./recolored_image.png
+				${pkgs.lutgen}/bin/lutgen apply ./image -p distortedprose -${optionalString preserveColors "P"}L${toString luminosity} -o ./recolored_image.png
 			'';
 
 			installPhase = ''

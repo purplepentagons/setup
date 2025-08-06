@@ -20,6 +20,9 @@ in {
 		".config/hypr/".source = ./hypr;
 
 		# files which require color substitution
+
+		".config/fuzzel/fuzzel.ini".source = (applyConfigData ./fuzzel/fuzzel.ini.mustache);
+
 		".config/foot/foot.ini".source = (applyConfigData ./foot/foot.ini.mustache);
 
 		".config/waybar/style.css".source = (applyConfigData ./waybar/style.css.mustache);
@@ -31,6 +34,11 @@ in {
 		".config/starship.toml".source = ./no_folder/starship.toml;
 
 		# odd to have wallpapers in dotfiles, but whatever works
-		".config/wallpapers/0057.png".source = (recolorImage (filterAttrs (n: v: hasPrefix "base" n) config.modules.color.colors) ./wallpapers/0057.jpg "wallpaper");
+		".config/wallpapers/0057.png".source = recolorImage {
+			colors = (filterAttrs (n: v: hasPrefix "base" n) config.modules.color.colors);
+			image = ./wallpapers/0057.jpg;
+			luminosity = 0.4;
+			preserveColors = true;
+		};
 	};
 }
