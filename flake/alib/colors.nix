@@ -4,7 +4,7 @@
 	inherit (lib.strings) concatMapStrings concatMapStringsSep;
 	inherit (lib.lists) take;
 in {
-	config.functions.colors = {
+	config.functions.colors = rec {
 		listToHex = color: if (length color) == 3 || (length color) == 4 then 
 			concatMapStrings (value: ((if value <= 15 then "0" else "") + toHexString value)) color
 		else throw "expected a list with a length of 3 or 4";
@@ -16,8 +16,8 @@ in {
 		else throw "expected a list with a length of 3 or 4";
 
 		genMustacheColorData = colorList: (concatMapAttrs (name: color: {
-			"${name}_hex" = config.functions.colors.listToHex color;
-			"${name}_rgb" = config.functions.colors.listToRGB color;
+			"${name}_hex" = listToHex color;
+			"${name}_rgb" = listToRGB color;
 		}) colorList);
 
 		recolorImage = colors: image: name: pkgs.stdenvNoCC.mkDerivation {
@@ -26,7 +26,7 @@ in {
 			nativeBuildinputs = with pkgs; [ lutgen ];
 
 			passAsFile = [ "colors" "image" ];
-			colors = concatMapStringsSep "\n" (color: "#${config.functions.colors.listToHex color}") (filter (color: length color == 3) (attrValues colors) );
+			colors = concatMapStringsSep "\n" ( color: "#${listToHex color}" ) ( attrValues colors );
 			inherit image;
 
 			phases = [ "buildPhase" "installPhase" ];
@@ -39,6 +39,7 @@ in {
 				export LUTGEN_DIR=$HOME/theme
 				cp $colorsPath ./theme/distortedprose
 
+				# for some reason, the path to the image is to another path, so I have to open it like a matryoshka doll
 				cat $(cat $imagePath) > image
 
 				${pkgs.lutgen}/bin/lutgen apply ./image -p distortedprose -PL0.1 -o ./recolored_image.png
