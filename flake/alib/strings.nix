@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }: {
 	config.functions.strings = {
 		# https://pablo.tools/blog/computers/nix-mustache-templates/
-		mustacheTemplate = data: template: name: pkgs.stdenv.mkDerivation {
+		mustacheTemplate = data: template: name: pkgs.stdenvNoCC.mkDerivation {
 			name = "${name}";
 
 			nativeBuildinputs = with pkgs; [mustache-go];

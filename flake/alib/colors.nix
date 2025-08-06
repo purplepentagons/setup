@@ -1,5 +1,5 @@
-{ config, lib, ... }: let 
-	inherit (builtins) length toString elemAt;
+{ config, lib, pkgs, ... }: let 
+	inherit (builtins) length toString elemAt map toJSON attrValues filter;
 	inherit (lib) toHexString concatMapAttrs;
 	inherit (lib.strings) concatMapStrings concatMapStringsSep;
 	inherit (lib.lists) take;
@@ -15,9 +15,38 @@ in {
 			"rgba(" + (concatMapStringsSep "," (value: toString value) (take 3 color)) + "," + (toString ((elemAt color 3) / 255.0)) + ")"
 		else throw "expected a list with a length of 3 or 4";
 
-		genStringReplacementList = colorList: (concatMapAttrs (name: color: {
+		genMustacheColorData = colorList: (concatMapAttrs (name: color: {
 			"${name}_hex" = config.functions.colors.listToHex color;
 			"${name}_rgb" = config.functions.colors.listToRGB color;
 		}) colorList);
+
+		recolorImage = colors: image: name: pkgs.stdenvNoCC.mkDerivation {
+			name = "${name}";
+
+			nativeBuildinputs = with pkgs; [ lutgen ];
+
+			passAsFile = [ "colors" "image" ];
+			colors = concatMapStringsSep "\n" (color: "#${config.functions.colors.listToHex color}") (filter (color: length color == 3) (attrValues colors) );
+			inherit image;
+
+			phases = [ "buildPhase" "installPhase" ];
+
+			buildPhase = ''
+				# fixes issue with homeless_shelter directory
+				export HOME=$(pwd)
+
+				mkdir theme
+				export LUTGEN_DIR=$HOME/theme
+				cp $colorsPath ./theme/distortedprose
+
+				cat $(cat $imagePath) > image
+
+				${pkgs.lutgen}/bin/lutgen apply ./image -p distortedprose -PL0.1 -o ./recolored_image.png
+			'';
+
+			installPhase = ''
+				cp recolored_image.png $out
+			'';
+		};
 	};
 }
