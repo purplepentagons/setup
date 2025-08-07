@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }: let 
-	inherit (builtins) length toString elemAt map toJSON attrValues filter;
-	inherit (lib) toHexString concatMapAttrs optionalString;
+	inherit (builtins) length toString elemAt map toJSON attrValues filter elem;
+	inherit (lib) toHexString concatMapAttrs optionalString filterAttrs;
 	inherit (lib.strings) concatMapStrings concatMapStringsSep;
 	inherit (lib.lists) take;
 in {
@@ -56,5 +56,24 @@ in {
 				cp recolored_image.png $out
 			'';
 		};
+
+		filterBase16Colors = colors: filterAttrs (n: v: elem n [
+			"black"
+			"red"
+			"green"
+			"yellow"
+			"blue"
+			"magenta"
+			"cyan"
+			"white"
+			"bright_black"
+			"bright_red"
+			"bright_green"
+			"bright_yellow"
+			"bright_blue"
+			"bright_magenta"
+			"bright_cyan"
+			"bright_white"
+		]) colors;
 	};
 }

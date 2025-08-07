@@ -1,12 +1,14 @@
 {
 	modules.color.colors = rec {
-		darkbg = [ 0 0 0 127 ];
-		lightbg = [ 0 0 0 76 ];
+
 
 		background = [ 10 10 15 ];
-		background2 = [ 34 34 44 ];
+		bright_background = [ 34 34 44 ];
+		# bright foreground does not need to exist i prefer my text full white
 		foreground = [ 255 255 255 ];
+		
 
+		# base16 colors
 		black = [ 32 34 39 ];
 		red = [ 224 38 38 ];
 		green = [ 0 183 43 ];
@@ -22,26 +24,16 @@
 		bright_blue = [ 143 169 255 ];
 		bright_magenta = [ 250 155 244 ];
 		bright_cyan = [ 99 255 216 ];
-		bright_white = [ 240 241 243 ];
+		bright_white = [ 235 239 239 ];
 
-		# automatically generate this somewhere else instead of defining them here
-		base00 = black;
-		base01 = red;
-		base02 = green;
-		base03 = yellow;
-		base04 = blue;
-		base05 = magenta;
-		base06 = cyan;
-		base07 = white;
-		base08 = bright_black;
-		base09 = bright_red;
-		base0A = bright_green;
-		base0B = bright_yellow;
-		base0C = bright_blue;
-		base0D = bright_magenta;
-		base0E = bright_cyan;
-		base0F = bright_white;
-		base10 = background;
-		base11 = background2;
+		# extra non-base16 colors for other uses
+		orange = [ 255 144 25 ];
+		gray = [ 69 69 73 ];
+		purple = [160 0 209];
+		brown = [ 122 87 65 ];
+		bright_orange = [ 255 181 102 ];
+		bright_gray = [ 140 140 150];
+		bright_purple = [216 114 247];
+		bright_brown = [ 176 131 104 ];
 	};
 }
