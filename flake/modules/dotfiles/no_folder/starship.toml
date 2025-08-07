@@ -1,6 +1,0 @@
-[nix_shell]
-format = "[󱄅 $name]($style) "
-style = "bold blue"
-
-[git_branch]
-ignore_branches = ["master", "main"]

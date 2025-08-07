@@ -9,6 +9,7 @@
 	applyConfigData = file: mustacheTemplate (
 		(genMustacheColorData config.modules.color.colors) // {
 			"disclaimer" = "This file was generated using a Mustache template..";
+			"arrow" = "󰹞";
 		}
 	) file (toString file); # i don't care about the package name here i'm not spending time cleaning something i'll never see
 	
@@ -32,7 +33,7 @@ in {
 		".config/mako/config".source = (applyConfigData ./mako/config.mustache);
 
 		# standalone files
-		".config/starship.toml".source = ./no_folder/starship.toml;
+		".config/starship.toml".source = (applyConfigData ./no_folder/starship.toml.mustache);
 
 		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers/0057.png".source = recolorImage {
