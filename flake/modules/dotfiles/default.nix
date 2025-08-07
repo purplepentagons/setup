@@ -17,7 +17,8 @@ in {
 		# TODO: seriously, automate this so I don't have to specify config files in two places
 		
 		# folders
-		".config/hypr/".source = ./hypr;
+		".config/hypr/hyprland.conf".source = (applyConfigData ./hypr/hyprland.conf.mustache);
+		".config/hypr/hyprpaper.conf".source = (applyConfigData ./hypr/hyprpaper.conf);
 
 		# files which require color substitution
 
