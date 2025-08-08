@@ -9,7 +9,7 @@
 	applyConfigData = file: mustacheTemplate (
 		(genMustacheColorData config.modules.style.colors) // {
 			"disclaimer" = "This file was generated using a Mustache template.";
-			"arrow" = "󰹞";
+			"arrow" = config.modules.style.arrow;
 		}
 	) file (toString file); # i don't care about the package name here i'm not spending time cleaning something i'll never see
 	
@@ -38,9 +38,9 @@ in {
 		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers/0057.png".source = recolorImage {
 			colors = (filterBase16Colors config.modules.style.colors);
-			image = ./wallpapers/0057.jpg;
-			luminosity = 0.4;
-			preserveColors = true;
+			image = ./wallpapers/thedivinecomedy.png;
+			luminosity = 0.3;
+			preserveColors = false;
 		};
 	};
 }

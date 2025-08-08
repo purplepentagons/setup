@@ -2,7 +2,7 @@
 	imports = [
 		./packages.nix
 		./fonts.nix
-		./colors.nix
+		./style.nix
 		
 		./dotfiles
 		./programs
