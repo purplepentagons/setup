@@ -2,7 +2,7 @@
 
 	imports = [
 		./modules
-		./rice.nix
+		./config
 	];
 
 	home = {

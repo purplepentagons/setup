@@ -15,10 +15,10 @@ in {
 			"rgba(" + (concatMapStringsSep "," (value: toString value) (take 3 color)) + "," + (toString ((elemAt color 3) / 255.0)) + ")"
 		else throw "expected a list with a length of 3 or 4";
 
-		genMustacheColorData = colorList: (concatMapAttrs (name: color: {
+		genMustacheColorData = colorList: concatMapAttrs (name: color: {
 			"${name}_hex" = listToHex color;
 			"${name}_rgb" = listToRGB color;
-		}) colorList);
+		}) colorList;
 
 		# the default name is wallpaper because you're usually using this for a wallpaper
 		recolorImage = {
