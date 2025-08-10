@@ -1,5 +1,5 @@
 {
-	home.shellAliases = {
+	modules.shell.aliases = {
 		# switch to home-manager flake
 		# nxs = "home-manager switch --flake ~/setup/flake";
 		

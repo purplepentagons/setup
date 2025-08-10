@@ -1,6 +1,6 @@
 # Wallpaper credit
 
-## Created by purplepentagons on GitHub (me)
+## purplepentagons (me)
 - colordial.png
 - isolines.png
 - purpleflames.png
@@ -11,3 +11,4 @@
 
 ## Unknown
 - 0057.jpg
+- saharadesert.png

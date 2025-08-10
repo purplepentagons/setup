@@ -19,7 +19,7 @@
 		# for some reason, nix.options.experimental-features doesn't work
 		# i'm forced to do this as a workaround
 		extraOptions = ''
-			experimental-features = nix-command flakes
+			experimental-features = nix-command flakes pipe-operators
 		'';
 	};
 
