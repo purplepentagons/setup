@@ -1,7 +1,6 @@
 CURRENT_VOLUME="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }')"
 #alias vol="pactl set-sink-volume @DEFAULT_SINK@"
 
-# double percent signs to escape them (i use printf)
 MENU_OPTIONS="󱄠 Set Volume (curr. $CURRENT_VOLUME)
 󰸈 Mute
 󰝝 Volume Up 10%

@@ -1,6 +1,8 @@
 {
 	imports = [
 		./firefox
+
+		./xdg.nix
 	];
 
 	programs.bash.enable = true;

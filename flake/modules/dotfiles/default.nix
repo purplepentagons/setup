@@ -38,7 +38,7 @@ in {
 		# odd to have wallpapers in dotfiles, but whatever works
 		".config/wallpapers/0057.png".source = recolorImage {
 			colors = (filterBase16Colors config.modules.style.colors);
-			image = ./wallpapers/thedivinecomedy2.png;
+			image = ./wallpapers/0057.jpg;
 			luminosity = 0.4;
 			preserveColors = true;
 		};

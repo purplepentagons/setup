@@ -5,13 +5,15 @@ if [ -d $NOTES_FOLDER ]; then
 fi
 
 LS_RESULT=$(ls -1 $NOTES_FOLDER)
-FUZZEL_RESULT=$(printf "$LS_RESULT" | fuzzel -d)
+FUZZEL_RESULT=$(printf "%s" "$LS_RESULT" | fuzzel -d)
+
+FILE_LOCATION="$NOTES_FOLDER/$FUZZEL_RESULT"
+DEFAULT_TEXT="Hello, this is a note!"
 
 if echo "$LS_RESULT" | grep -wq "$FUZZEL_RESULT"; then
-	codium "$NOTES_FOLDER/$FUZZEL_RESULT"
+	xdg-open "$FILE_LOCATION"
 elif [[ "$FUZZEL_RESULT" != "" ]]; then 
-	touch "$NOTES_FOLDER/$FUZZEL_RESULT" && codium "$NOTES_FOLDER/$FUZZEL_RESULT"
+	touch "$FILE_LOCATION" && printf "%s" "$DEFAULT_TEXT" >> "$FILE_LOCATION" && xdg-open "$FILE_LOCATION"
 fi
-# switch to a better notes editor
 
 

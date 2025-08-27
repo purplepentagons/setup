@@ -5,5 +5,6 @@
 		"fuzzel-menu" = ./fuzzel-menu.sh;
 		"fuzzel-power" = ./fuzzel-power.sh;
 		"fuzzel-volume" = ./fuzzel-volume.sh;
+		"fuzzel-networking" = ./fuzzel-networking.sh;
 	};
 }
