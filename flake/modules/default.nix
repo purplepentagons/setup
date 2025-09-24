@@ -1,9 +1,8 @@
 { config, lib, ... }: {
 	imports = [
 		./packages.nix
-		./fonts.nix
-		./style.nix
 		
+		./style
 		./dotfiles
 		./programs
 		./shell

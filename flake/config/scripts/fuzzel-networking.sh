@@ -22,7 +22,7 @@ case ${FUZZEL_RESULT:2} in
 		AWK_SCRIPT='{ if ($2 != "") print $1,$2,$3,$7 }'
 		WIFI_NETWORKS=$(nmcli -t device wifi list | sed -E "$SED_SCRIPT" | awk -F "|" -v OFS="|" "$AWK_SCRIPT")
 
-		AWK_SCRIPT='{ print (),(($3 != "") ? $3 : $2) }'
+		AWK_SCRIPT='{ print (($3 != "") ? $3 : $2) }'
 		WIFI_NETWORK_SSIDS=$(printf "%s" "$WIFI_NETWORKS" | awk -F "|" "$AWK_SCRIPT")
 		SECOND_FUZZEL_RESULT=$(printf "%s" "$WIFI_NETWORK_SSIDS" | fuzzel -d)
 		CONNECTION_VERB="Connect"
