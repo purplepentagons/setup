@@ -20,7 +20,7 @@
 	fonts.fontconfig = {
 		enable = true;
 		defaultFonts = {
-			monospace = [ "AtkynsonMono Nerd Font Propo" ];
+			monospace = [ "Inconsolata Nerd Font Propo" ];
 			sansSerif = [ "Inter Display" ];
 			serif = [ "Source Serif 4 Display" ];
 		};

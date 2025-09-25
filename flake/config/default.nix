@@ -1,6 +1,7 @@
 {
 	imports = [
 		./scripts
+		./programs
 
 		./rice.nix
 		./aliases.nix
