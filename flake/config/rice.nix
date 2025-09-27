@@ -3,7 +3,7 @@
 		arrow = "󰹞";
 		colors = {
 			background = [ 13 13 22 ];
-			bright_background = [ 34 34 50 ];
+			bright_background = [ 28 28 44 ];
 			foreground = [ 255 255 255 ];
 
 			black = [ 32 34 46 ];

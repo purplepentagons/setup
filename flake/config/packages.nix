@@ -10,6 +10,7 @@
 		virt-manager
 		vscodium
 		zathura
+		anki
 
 		# cli programs
 		less
