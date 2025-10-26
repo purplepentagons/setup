@@ -6,8 +6,9 @@ WIFI_ENABLED=$(nmcli radio wifi)
 MENU_OPTIONS="󰀻 Ethernet
 󰎞 WiFi ($WIFI_ENABLED)
 "
+let MENU_ITEM_COUNT=$(echo "$MENU_OPTIONS" | wc -l)-1
 
-FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d)
+FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d -l "$MENU_ITEM_COUNT")
 
 case ${FUZZEL_RESULT:2} in
 	"Ethernet")
@@ -29,17 +30,18 @@ case ${FUZZEL_RESULT:2} in
 		
 		MENU_OPTIONS="󱘖 $CONNECTION_VERB
 		"
+		let MENU_ITEM_COUNT=$(echo "$MENU_OPTIONS" | wc -l)-1
 
 		# grepping the ssid to make sure that nothing goes wrong
 		echo "$WIFI_NETWORKS" | grep -q "$SECOND_FUZZEL_RESULT" && [ "$SECOND_FUZZEL_RESULT" != "" ] && \
-		THIRD_FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d)
+		THIRD_FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d -l "$MENU_ITEM_COUNT")
 
 		case ${THIRD_FUZZEL_RESULT:2} in
 			"Disconnect")
 				nmcli connection down "$SECOND_FUZZEL_RESULT" ;;
 			"Connect")
 				# this does not need esc key prevention, you can skip password by doing this
-				WIFI_PASSWORD=$(fuzzel -d -l 0 -p "Input password...")
+				WIFI_PASSWORD=$(fuzzel -d -l 0)
 				printf "%s" "$WIFI_PASSWORD" | nmcli device wifi connect "$SECOND_FUZZEL_RESULT" ;;
 		esac
 esac

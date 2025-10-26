@@ -4,8 +4,9 @@ MENU_OPTIONS="󰀻 Applications
 󱄠 Volume
 󰛳 Networking
 "
+let MENU_ITEM_COUNT=$(echo "$MENU_OPTIONS" | wc -l)-1
 
-FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d)
+FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d -l "$MENU_ITEM_COUNT")
 
 case ${FUZZEL_RESULT:2} in
 	"Applications")
