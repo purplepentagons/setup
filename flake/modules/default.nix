@@ -1,9 +1,9 @@
 { config, lib, ... }: {
 	imports = [
 		./packages.nix
+		./dotfiles.nix
 		
-		./style
-		./dotfiles # dotfiles will be kept in modules until I find a way to seperate config dotfiles and module dotfiles
 		./shell
+		./style
 	];
 }
