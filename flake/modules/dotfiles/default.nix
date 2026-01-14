@@ -44,19 +44,19 @@ in {
 	# 	);
 
 	config.home.file = (concatMapAttrs (folder: location: 
-		listToAttrs map (file: 
+		listToAttrs (map (file: 
 			let
 				has_mustache = hasExtension file ".mustache";
 				config_file_name = removeSuffix ".mustache" (toString file);
 			in 
 			nameValuePair ".config/${folder}/${config_file_name}" { 
-				source = if has_mustache then 
+				source = toString (if has_mustache then 
 					applyConfigData file
-				else file; 
+				else file); 
 			}
-		) (listFilesRecursive location)
+		) (listFilesRecursive location))
 	) config.modules.dotfiles.folders) // 
-	mapAttrs' (name: file: nameValuePair ".config/${name}" (applyConfigData file) ) config.modules.dotfiles.files;
+	mapAttrs' (name: file: nameValuePair ".config/${name}" { source = toString (applyConfigData file); }) config.modules.dotfiles.files;
 
 
 	# } // {
