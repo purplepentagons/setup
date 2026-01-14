@@ -1,8 +1,7 @@
-{ alib, config, lib, pkgs, ... }: let
-	inherit (builtins) readDir readFile attrNames match replaceStrings typeOf; 
-	inherit (lib) mkOption mkIf mapAttrsToList elem; 
-	inherit (lib.types) attrs attrsOf str nullOr oneOf path;
-	inherit (alib.path) getExtension;
+{ config, lib, pkgs, ... }: let
+	inherit (builtins) readFile typeOf; 
+	inherit (lib) mkOption mkIf mapAttrsToList ; 
+	inherit (lib.types) attrsOf str nullOr oneOf path;
 in {
 	options.modules.shell =  {
 		scripts = mkOption {
