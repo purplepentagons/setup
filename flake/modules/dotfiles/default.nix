@@ -1,8 +1,8 @@
 { alib, config, pkgs, lib, ... }: let
 
-	inherit (builtins) listToAttrs;
+	inherit (builtins) listToAttrs elemAt;
 	inherit (lib) mkOption nameValuePair concatMapAttrs mapAttrs';
-	inherit (lib.strings) removeSuffix;
+	inherit (lib.strings) removeSuffix split;
 	inherit (lib.types) attrsOf path;
 	inherit (lib.filesystem) listFilesRecursive;
 	inherit (alib.colors) genMustacheColorData recolorImage filterBase16Colors;
@@ -27,27 +27,16 @@ in {
 		};
 	};
 
-	# map the folders
-	# then map the files
-
-	# config.home.file = listToAttrs mapAttrs' 
-	# 	({ folder, file }: let 
-	# 			is_mustache = "true/false value if it's a mustache file or not";
-	# 			config_file_name = "file name without .mustache extension";
-	# 	in nameValuePair (
-	# 		".config/${folder}/${config_file_name}"
-	# 	) 
-	# 		{ source = applyConfigData file; }
-	# 	) (
-	# 		# map the folders to a list of every config file
-	# 		config.modules.dotfiles.folders
-	# 	);
-
 	config.home.file = (concatMapAttrs (folder: location: 
 		listToAttrs (map (file: 
 			let
 				has_mustache = hasExtension file ".mustache";
-				config_file_name = removeSuffix ".mustache" (toString file);
+				# regex captures everything after the first occurance of "waybar/"
+				# files from listFilesRecursive are absolute paths
+				# https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFGuL_pXu7noqU-AnzpkdfQJ_1KgiQt2Jm0w&s
+				config_file_name = elemAt (elemAt (
+					split "${folder}\/(.*)" (removeSuffix ".mustache" (toString file))) 
+				1) 0;
 			in 
 			nameValuePair ".config/${folder}/${config_file_name}" { 
 				source = toString (if has_mustache then 
@@ -57,29 +46,7 @@ in {
 		) (listFilesRecursive location))
 	) config.modules.dotfiles.folders) // 
 	mapAttrs' (name: file: nameValuePair ".config/${name}" { source = toString (applyConfigData file); }) config.modules.dotfiles.files;
-
-
-	# } // {
-	#	# TODO: seriously, automate this so I don't have to specify config files in two places
-	#	
-	#	# folders
-	#	".config/hypr/hyprland.conf".source = (applyConfigData ./hypr/hyprland.conf.mustache);
-	#	".config/hypr/hyprpaper.conf".source = (applyConfigData ./hypr/hyprpaper.conf);
-	#
-	#	# files which require color substitution
-	#
-	#	".config/fuzzel/fuzzel.ini".source = (applyConfigData ./fuzzel/fuzzel.ini.mustache);
-	#	
-	#	".config/foot/foot.ini".source = (applyConfigData ./foot/foot.ini.mustache);
-	#
-	#	".config/waybar/style.css".source = (applyConfigData ./waybar/style.css.mustache);
-	#	".config/waybar/config.jsonc".source = ./waybar/config.jsonc;
-	#
-	#	".config/mako/config".source = (applyConfigData ./mako/config.mustache);
-	#
-	#	# standalone files
-	#	".config/starship.toml".source = (applyConfigData ./no_folder/starship.toml.mustache);
-	#
+	
 	#	# odd to have wallpapers in dotfiles, but whatever works
 	#	".config/wallpapers/0057.png".source = recolorImage {
 	#		colors = (filterBase16Colors config.modules.style.colors);
@@ -87,5 +54,4 @@ in {
 	#		luminosity = 0.4;
 	#		preserveColors = true;
 	#	};
-	#};
 }
