@@ -46,12 +46,4 @@ in {
 		) (listFilesRecursive location))
 	) config.modules.dotfiles.folders) // 
 	mapAttrs' (name: file: nameValuePair ".config/${name}" { source = toString (applyConfigData file); }) config.modules.dotfiles.files;
-	
-	#	# odd to have wallpapers in dotfiles, but whatever works
-	#	".config/wallpapers/0057.png".source = recolorImage {
-	#		colors = (filterBase16Colors config.modules.style.colors);
-	#		image = ./wallpapers/0057.jpg;
-	#		luminosity = 0.4;
-	#		preserveColors = true;
-	#	};
 }

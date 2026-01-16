@@ -3,6 +3,10 @@
 	inherit (lib) mkOption;
 	inherit (lib.types) attrsOf listOf int addCheck str;
 in {
+	imports = [
+		./wallpaper.nix
+	];
+
 	options.modules.style = {
 		colors = mkOption {
 			type = attrsOf (listOf (addCheck int (x: x >= 0 && x <= 255)));

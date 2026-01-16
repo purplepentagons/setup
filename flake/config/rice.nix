@@ -23,5 +23,7 @@
 			bright_cyan = [ 99 255 216 ];
 			bright_white = [ 235 239 239 ];
 		};
+
+		wallpaper = ./wallpapers/0057.jpg;
 	};
 }
