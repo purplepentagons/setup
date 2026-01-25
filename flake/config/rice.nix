@@ -2,9 +2,9 @@
 	modules.style = {
 		arrow = "󰹞";
 		colors = {
-			background = [ 13 13 22 ];
-			bright_background = [ 28 28 44 ];
-			foreground = [ 255 255 255 ];
+			background = [ 11 11 20 ];
+			bright_background = [ 32 32 48 ];
+			foreground = [ 230 230 255 ];
 
 			black = [ 32 34 46 ];
 			red = [ 224 38 38 ];
@@ -21,7 +21,7 @@
 			bright_blue = [ 143 169 255 ];
 			bright_magenta = [ 250 155 244 ];
 			bright_cyan = [ 99 255 216 ];
-			bright_white = [ 235 239 239 ];
+			bright_white = [ 235 239 255 ];
 		};
 
 		wallpaper = ./wallpapers/0057.jpg;
