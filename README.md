@@ -10,3 +10,6 @@ I'm not as well-acquainted with Nix as some other people are, so reading my code
 - Git
 
 Other necessary programs should be installed with home-manager.
+
+## Installation
+Enter the scripts directory and run the script that corresponds to your operating system.
