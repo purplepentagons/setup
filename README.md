@@ -11,5 +11,8 @@ I'm not as well-acquainted with Nix as some other people are, so reading my code
 
 Other necessary programs should be installed with home-manager.
 
-## Installation
-Enter the scripts directory and run the script that corresponds to your operating system.
+## Folders
+| Folder    | Usage                   |
+| -         | -                       |
+| /flake    | home-manager flake      |
+| /scripts  | Installation scripts    |

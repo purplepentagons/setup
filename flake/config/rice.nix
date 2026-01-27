@@ -24,6 +24,6 @@
 			bright_white = [ 235 239 255 ];
 		};
 
-		wallpaper = ./wallpapers/0057.jpg;
+		wallpaper = ./wallpapers/gustavedore5.png;
 	};
 }
