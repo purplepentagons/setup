@@ -41,7 +41,7 @@
     "group/left": {
         "orientation": "inherit",
         "modules": [
-            "hyprland/workspaces"
+            "niri/workspaces"
         ]
     },
 

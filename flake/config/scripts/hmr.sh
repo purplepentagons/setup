@@ -1,9 +1,11 @@
-home-manager switch --flake ~/setup/flake
+home-manager switch --flake ~/setup/flake -b backup
 
 # reload home-manager dependent applications
 
 # hyprctl dispatch exec waybar makes sure that waybar runs under wayland
-killall .waybar-wrapped && hyprctl dispatch exec waybar &
-killall .mako-wrapped && mako &
-killall hyprpaper && hyprpaper &
-hyprctl reload
+killall .waybar-wrapped
+waybar &
+killall mako
+mako &
+killall hyprpaper 
+hyprpaper &
