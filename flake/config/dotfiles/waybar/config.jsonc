@@ -20,7 +20,8 @@
         "modules": [
             "network",
             "cpu",
-            "memory"
+            "memory",
+            "battery"
         ]
     },
 
@@ -80,6 +81,11 @@
 
     "memory": {
         "format": "{}%  "
+    },
+
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
 
     "pulseaudio/slider": {
