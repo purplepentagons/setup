@@ -2,6 +2,7 @@
 	programs.firefox = {
 		enable = true;
 		profiles.purplepentagons = {
+			id = 0;
 			extensions.force = true;
 			path = "default";
 			isDefault = true;

@@ -20,7 +20,7 @@
 		# gui
 		fuzzel
 		mako
-		hyprpaper
+		swaybg
 		waybar
 
 		# niri requires this for xwayland apps

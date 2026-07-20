@@ -1,7 +1,6 @@
 {
 	modules.dotfiles = {
 		folders = {
-			"hypr" = ./hypr;
 			"fuzzel" = ./fuzzel;
 			"foot" = ./foot;
 			"waybar" = ./waybar;
