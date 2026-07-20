@@ -16,17 +16,13 @@
 		# cli programs
 		starship
 
-		# wm related
-		hyprshot
-		# rofi-wayland
+		# gui
 		fuzzel
 		mako
 		hyprpaper
 		waybar
 
-		# packages i haven't figured out how to categorize
-		usbutils
-		udisks
-		udiskie
+		# niri
+		xwayland-satellite
 	];
 }

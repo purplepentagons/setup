@@ -3,6 +3,7 @@
 		./firefox
 
 		./xdg.nix
+		./system.nix
 	];
 
 	programs.bash.enable = true;
