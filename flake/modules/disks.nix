@@ -1,4 +1,4 @@
-{ config, lib, pkgs ... }: let 
+{ config, lib, pkgs, ... }: let 
   inherit (lib) mkOption mkIf;
   inherit (lib.types) nullOr bool;
 in {
@@ -12,6 +12,5 @@ in {
   ) {
     enable = true;
     automount = true;
-    tray = "auto"
   };
 }

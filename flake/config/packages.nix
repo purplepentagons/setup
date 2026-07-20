@@ -3,7 +3,7 @@
 		# packages in the config module are programs that don't require nix config/modules
 		# file managers, password managers, htop/btop, alternatives to programs in coreutils
 
-		xfce.thunar
+		thunar
 		keepassxc
 		signal-desktop
 		mpv

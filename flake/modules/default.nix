@@ -7,4 +7,4 @@
 		./shell
 		./style
 	];
-}g
+}

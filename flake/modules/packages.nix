@@ -3,6 +3,7 @@
 		# packages in the modules module are packages that should be installed no matter what
 		# terminal emulators, bars, notification daemons, etc
 
+
 		# if I wipe the entirety of the config module, the system should be mostly functional
 		# albeit lacking functionality or applications required to do anything
 
@@ -22,7 +23,7 @@
 		hyprpaper
 		waybar
 
-		# niri
+		# niri requires this for xwayland apps
 		xwayland-satellite
 	];
 }

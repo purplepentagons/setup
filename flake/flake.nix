@@ -13,7 +13,7 @@
 		let 
 			username = "purplepentagons";
 			system = "x86_64-linux";
-			stateVersion = "25.05";
+			stateVersion = "26.05";
 			
 			alib = (pkgs.lib.evalModules {
 				modules = [ ./alib ];

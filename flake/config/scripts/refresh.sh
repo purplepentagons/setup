@@ -1,4 +1,4 @@
-home-manager switch --flake ~/setup/flake -b backup
+home-manager switch --flake ~/setup/flake/ -b backup $@
 
 # reload home-manager dependent applications
 

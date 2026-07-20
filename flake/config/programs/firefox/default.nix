@@ -1,9 +1,10 @@
 {
 	programs.firefox = {
 		enable = true;
-		profiles.default = {
+		profiles.purplepentagons = {
 			extensions.force = true;
 			path = "default";
+			isDefault = true;
 			userChrome = builtins.readFile ./userChrome.css;
 		};
 
