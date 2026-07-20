@@ -7,5 +7,5 @@ killall .waybar-wrapped
 waybar &
 killall mako
 mako &
-killall hyprpaper 
-hyprpaper &
+killall swaybg
+swaybg -i ~/.config/wallpaper.png -m fill &

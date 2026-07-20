@@ -22,8 +22,5 @@
 		mako
 		swaybg
 		waybar
-
-		# niri requires this for xwayland apps
-		xwayland-satellite
 	];
 }
