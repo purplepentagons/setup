@@ -97,7 +97,7 @@ hotkey-overlay {
     skip-at-startup
 }
 
-// prefer-no-csd
+prefer-no-csd
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // screenshot-path null
@@ -107,20 +107,20 @@ animations {
     slowdown 0.8
 }
 
-// Open the Firefox picture-in-picture player as floating by default.
+// Open the Firefox picture-in-picture player as floating by default
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
 }
 
-// block out keepassxc from screen capture.
+// Block out KeePassXC from screen capture
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     block-out-from "screen-capture"
 }
 
 window-rule {
-    geometry-corner-radius 15
+    geometry-corner-radius 0
     clip-to-geometry true
 }
 
