@@ -35,6 +35,7 @@
 				"browser.newtabpage.activity-stream.feeds.section.topstories" = false;
 				"toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 				"extensions.pocket.enabled" = false;
+				"browser.theme.toolbar-theme" = 0;
 			};
 
 			InstallAddonsPermission.Default = true;
