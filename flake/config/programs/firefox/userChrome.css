@@ -33,3 +33,113 @@ toolbar * {
 .tab-icon-image {
     display: none;
 }
+
+/* https://www.reddit.com/r/FirefoxCSS/comments/1m5mgq3/sharing_a_simple_oneline_theme_that_i_made_to/ */
+
+:root {
+  --navbarWidth: 30vw;
+  --animationSpeed: 0.5s;
+}
+
+#TabsToolbar {
+  margin-left : var(--navbarWidth) !important;
+}
+
+#nav-bar {
+  margin-right: calc(100vw - var(--navbarWidth)) !important;
+  min-width: var(--navbarWidth) !important;
+  box-shadow: none !important;
+}
+
+#navigator-toolbox #nav-bar {
+  margin-bottom: 0px !important;
+}
+
+#urlbar-container {
+  min-width   : 0px !important;
+}
+
+:root[uidensity="compact"] #nav-bar {
+  margin-top  : -37px !important;
+  height      : 34px !important;
+}
+
+#nav-bar {
+  background  : none !important;
+  box-shadow  : none !important;
+}
+
+#navigator-toolbox {
+  border      : none !important;
+}
+
+.titlebar-spacer {
+  display     : none !important;
+}
+
+#urlbar-background {
+  border      : none !important;
+}
+
+:root{ --toolbar-field-focus-border-color: transparent !important; }
+
+.browser-titlebar {
+    max-height: 34px !important;
+    margin-bottom: 0px !important;
+}
+
+#forward-button { display: none !important }
+
+.titlebar-buttonbox-container{ 
+margin-left: 21px !important; 
+}
+
+.titlebar-spacer { 
+display:none;
+}
+
+#urlbar-searchmode-switcher {
+display: none !important;
+}
+
+#identity-box.extensionPage #identity-icon-label {
+    display: none !important;
+}
+
+#tabbrowser-tabbox {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}
+
+.tabbrowser-tab .tab-close-button {
+    visibility: hidden !important;
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+    visibility: visible !important;
+}
+
+.tabbrowser-tab:hover .tab-text {
+    opacity: 1.0 !important;
+}
+
+#firefox-view-button {
+    visibility: hidden !important;
+}
+
+#PanelUI-button {
+    order: -1;
+}
+
+toolbarbutton {
+    padding: 0 !important;
+}
+
+#alltabs-button {
+    visibility: hidden !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-text {
+    opacity: 0.5 !important;
+}
