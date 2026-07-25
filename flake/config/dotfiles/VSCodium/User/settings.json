@@ -1,0 +1,19 @@
+{
+    "workbench.colorTheme": "Dark Modern",
+    "editor.fontSize": 16,
+    "editor.fontFamily": "\"Inconsolata Nerd Font Propo\", monospace",
+    "workbench.activityBar.location": "top",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.editor.showTabs": "none",
+    "workbench.editor.tabActionCloseVisibility": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": "off",
+    "editor.codeLens": false,
+    "editor.glyphMargin": false,
+    "editor.folding": false,
+    "workbench.statusBar.visible": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "workbench.sideBar.location": "right",
+    "workbench.sideBar.experimental.fontFamily": "sans-serif"
+}

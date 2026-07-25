@@ -27,16 +27,16 @@ in {
 		};
 	};
 
+	# eventually rewrite this to allow for differences between the variable folder and the folder's actual name
 	config.home.file = (concatMapAttrs (folder: location: 
 		listToAttrs (map (file: 
 			let
 				has_mustache = hasExtension file ".mustache";
-				# regex captures everything after the first occurance of "waybar/"
 				# files from listFilesRecursive are absolute paths
 				# https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFGuL_pXu7noqU-AnzpkdfQJ_1KgiQt2Jm0w&s
-				config_file_name = elemAt (elemAt (
-					split "${folder}\/(.*)" (removeSuffix ".mustache" (toString file))) 
-				1) 0;
+				config_file_name = elemAt (
+					split "\/${folder}\/" (removeSuffix ".mustache" (toString file)) 
+				) 2;
 			in 
 			nameValuePair ".config/${folder}/${config_file_name}" { 
 				source = toString (if has_mustache then 
