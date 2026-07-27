@@ -5,7 +5,7 @@ if [ -d $NOTES_FOLDER ]; then
 fi
 
 LS_RESULT=$(ls -1 $NOTES_FOLDER)
-FUZZEL_RESULT=$(printf "%s" "$LS_RESULT" | fuzzel -d)
+FUZZEL_RESULT=$(printf "%s" "$LS_RESULT" | fuzzel -d $@)
 
 if [ ! -n "$FUZZEL_RESULT" ]; then
 	exit

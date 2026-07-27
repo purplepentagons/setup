@@ -2,21 +2,17 @@ MENU_OPTIONS="󰀻 Applications
 󰎞 Notes
  Power
 󱄠 Volume
-󰛳 Networking
 "
-let MENU_ITEM_COUNT=$(echo "$MENU_OPTIONS" | wc -l)-1
 
-FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d -l "$MENU_ITEM_COUNT")
+FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d --minimal-lines $@)
 
 case ${FUZZEL_RESULT:2} in
 	"Applications")
-		fuzzel ;;
+		fuzzel $@;;
 	"Notes")
-		fuzzel-note ;;
+		fuzzel-note $@;;
 	"Power")
-		fuzzel-power ;;
+		fuzzel-power $@;;
 	"Volume")
-		fuzzel-volume ;;
-	"Networking")
-		fuzzel-networking ;;
+		fuzzel-volume $@;;
 esac

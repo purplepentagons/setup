@@ -40,6 +40,13 @@
     },
     
     "group/left": {
+        "orientation":"inherit",
+        "modules": [
+            "custom/menu"
+        ]
+    },
+
+    "group/left2": {
         "orientation": "inherit",
         "modules": [
             "niri/workspaces"
@@ -61,7 +68,9 @@
 
     "modules-left": [
         "group/left",
-        "group/rtborder"
+        "group/trtborder",
+        "group/left2",
+        "group/artborder"
     ],
 
     "network": {
@@ -91,5 +100,10 @@
     "pulseaudio/slider": {
         "min": 0,
         "max": 100
+    },
+
+    "custom/menu": {
+        "format": "  ",
+        "on-click": "fuzzel-menu -a top-left -w 25 --hide-prompt"
     }
 }

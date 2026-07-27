@@ -6,9 +6,8 @@ MENU_OPTIONS="󱄠 Set Volume (curr. $CURRENT_VOLUME)
 󰝝 Volume Up 10%
 󰝞 Volume Down 10%
 "
-let MENU_ITEM_COUNT=$(echo "$MENU_OPTIONS" | wc -l)-1
 
-FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d -l "$MENU_ITEM_COUNT")
+FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d --minimal-lines $@)
 
 # i can't use aliases in bash scripts for some reason
 case ${FUZZEL_RESULT:2} in
