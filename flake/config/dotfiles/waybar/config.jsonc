@@ -103,7 +103,7 @@
     },
 
     "custom/menu": {
-        "format": "  ",
-        "on-click": "fuzzel-menu -a top-left -w 25 --hide-prompt"
+        "format": " 󰜁",
+        "on-click": "fuzzel-menu -a top-left -w 25 --hide-prompt --keyboard-focus=on-demand"
     }
 }

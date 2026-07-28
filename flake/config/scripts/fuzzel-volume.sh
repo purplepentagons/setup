@@ -1,16 +1,16 @@
 CURRENT_VOLUME="$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ print $5 }')"
 #alias vol="pactl set-sink-volume @DEFAULT_SINK@"
 
-MENU_OPTIONS="󱄠 Set Volume (curr. $CURRENT_VOLUME)
-󰸈 Mute
-󰝝 Volume Up 10%
-󰝞 Volume Down 10%
+MENU_OPTIONS="󱄠  Set Volume (curr. $CURRENT_VOLUME)
+󰸈  Mute
+󰝝  Volume Up 10%
+󰝞  Volume Down 10%
 "
 
 FUZZEL_RESULT=$(printf "%s" "$MENU_OPTIONS" | fuzzel -d --minimal-lines $@)
 
 # i can't use aliases in bash scripts for some reason
-case ${FUZZEL_RESULT:2} in
+case ${FUZZEL_RESULT:3} in
 	"Set Volume (curr. $CURRENT_VOLUME)")
 		pactl set-sink-volume @DEFAULT_SINK@ "$(fuzzel -d -l 0)%" ;;
 	"Mute")

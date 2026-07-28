@@ -2,8 +2,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Q hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+L hotkey-overlay-title="Run application launcher: fuzzel" { spawn "fuzzel"; }
-    Mod+D hotkey-overlay-title="Run other launcher: fuzzel-menu" { spawn "fuzzel-menu"; }
+    Mod+L hotkey-overlay-title="Run application launcher: fuzzel" { spawn "fuzzel" "--no-exit-on-keyboard-focus-loss"; }
+    Mod+D hotkey-overlay-title="Run other launcher: fuzzel-menu" { spawn "fuzzel-menu" "--no-exit-on-keyboard-focus-loss"; }
 
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }

@@ -1,12 +1,12 @@
-MENU_OPTIONS="󰀻 Applications
-󰎞 Notes
- Power
-󱄠 Volume
+MENU_OPTIONS="󰀻  Applications
+󰎞  Notes
+  Power
+󱄠  Volume
 "
 
 FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d --minimal-lines $@)
 
-case ${FUZZEL_RESULT:2} in
+case ${FUZZEL_RESULT:3} in
 	"Applications")
 		fuzzel $@;;
 	"Notes")

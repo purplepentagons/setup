@@ -3,7 +3,7 @@ NOTES_FOLDER=~/.dmenu/notes
 if [ -d $NOTES_FOLDER ]; then
 	mkdir -p $NOTES_FOLDER
 fi
-
+	
 LS_RESULT=$(ls -1 $NOTES_FOLDER)
 FUZZEL_RESULT=$(printf "%s" "$LS_RESULT" | fuzzel -d $@)
 

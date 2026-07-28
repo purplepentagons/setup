@@ -1,11 +1,11 @@
-MENU_OPTIONS="󰤂 Shutdown
-󰗽 Log Out
-󰜉 Reboot
+MENU_OPTIONS="󰤂  Shutdown
+󰗽  Log Out
+󰜉  Reboot
 "
 
 FUZZEL_RESULT=$(printf "$MENU_OPTIONS" | fuzzel -d --minimal-lines $@)
 
-case ${FUZZEL_RESULT:2} in
+case ${FUZZEL_RESULT:3} in
 	"Shutdown")
 		shutdown now ;;
 	"Logout")
