@@ -11,7 +11,7 @@ in {
 	config.home.file.".config/wallpaper.png".source = recolorImage {
 		colors = (filterBase16Colors config.modules.style.colors);
 		image = config.modules.style.wallpaper;
-		luminosity = 0.4;
+		luminosity = 0.5;
 		preserveColors = true;
 	};
 }

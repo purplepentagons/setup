@@ -5,9 +5,7 @@
 
 		thunar
 		keepassxc
-		signal-desktop
 		mpv
-		virt-manager
 		vscodium
 		zathura
 

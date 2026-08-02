@@ -19,7 +19,7 @@
 		gfn = "git ls-files | grep";
 
 		# make cli programs fancier
-		ls = "eza --icons";
+		ls = "eza --icons auto";
 		grep = "grep --color -i";
 	};
 }

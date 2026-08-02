@@ -7,6 +7,7 @@
 			"mako" = ./mako;
 			"niri" = ./niri;
 			"VSCodium" = ./VSCodium;
+			"mpv" = ./mpv;
 		};
 		files = {
 			"starship.toml" = ./no_folder/starship.toml.mustache;
